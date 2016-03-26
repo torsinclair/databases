@@ -12,7 +12,7 @@ var app = express();
 module.exports.app = app;
 
 // Set what we are listening on.
-app.set('port', 8080);
+app.set('port', 9998);
 
 // Logging and parsing
 app.use(morgan('dev'));

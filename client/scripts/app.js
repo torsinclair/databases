@@ -41,11 +41,13 @@ var app = {
     // POST the message to the server
     $.ajax({
       url: app.server,
-      type: 'POST',
+      method: 'POST',
       data: JSON.stringify(data),
       contentType: 'application/json',
       success: function (data) {
         // Trigger a fetch to update the messages, pass true to animate
+        console.log('hello');
+
         app.fetch();
       },
       error: function (data) {
@@ -60,8 +62,9 @@ var app = {
       type: 'GET',
       contentType: 'application/json',
       success: function(data) {
+        // data = JSON.parse(data);
         // Don't bother if we have nothing to work with
-        if (!data.results || !data.results.length) { return; }
+        if (!data.results || !data.results.length) { console.log('oops'); return; }
 
         // Get the last message
         var mostRecentMessage = data.results[data.results.length - 1];

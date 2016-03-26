@@ -11,7 +11,7 @@ describe('Persistent Node Chat Server', function() {
   beforeEach(function(done) {
     dbConnection = mysql.createConnection({
       user: 'root',
-      password: 'password',
+      password: 'pw',
       database: 'chat'
       //chat
     });
@@ -40,7 +40,7 @@ describe('Persistent Node Chat Server', function() {
               json: {
                 username: 'Valjean',
                 message: 'In mercy\'s name, three days is all I need.',
-                roomname: 'Hello'
+                room: 'Hello'
               }
       }, function () {
         // Now if we look in the database, we should find the
@@ -80,7 +80,7 @@ describe('Persistent Node Chat Server', function() {
       request('http://127.0.0.1:3000/classes/messages', function(error, response, body) {
         var messageLog = JSON.parse(body);
         expect(messageLog[0].text).to.equal('Men like you can never change!');
-        expect(messageLog[0].roomname).to.equal('main');
+        expect(messageLog[0].room).to.equal('main');
         done();
       });
     });

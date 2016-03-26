@@ -5,14 +5,18 @@ var mysql = require('mysql');
 // and to the database "chat".
 
 
-exports.dbConnection = dbConnection = mysql.createConnection({
+exports.connection = connection = mysql.createConnection({
+  host: 'localhost',
   user: 'root',
-  password: 'password',
+  password: 'pw',
   database: 'chat'
   //chat
 });
+
+connection.connect();
+
   
-//dbConnection.connect();
+// dbConnection.connect();
 
 // dbConnection.query('SELECT ' + ' FROM ', function(err, rows, fields) {
 //   //
