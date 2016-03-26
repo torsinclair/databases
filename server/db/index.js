@@ -5,22 +5,22 @@ var mysql = require('mysql');
 // and to the database "chat".
 
 
-exports.dbConnection = mysql.createConnection({
+exports.dbConnection = dbConnection = mysql.createConnection({
   user: 'root',
   password: 'password',
   database: 'chat'
   //chat
 });
   
-dbConnection.connect();
+//dbConnection.connect();
 
-dbConnection.query('SELECT ' + ' FROM ', function(err, rows, fields){
-  //
-  //
-  //
+// dbConnection.query('SELECT ' + ' FROM ', function(err, rows, fields) {
+//   //
+//   //
+//   //
 
-});
+// });
 
-dbConnection.end();
+// dbConnection.end();
 
-var tablename = "messages"; // TODO: fill this out
+// var tablename = "messages"; // TODO: fill this out
